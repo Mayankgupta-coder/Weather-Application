@@ -75,7 +75,7 @@ if($result['cod']!=200)
 				</div>
 			</div> <!-- .site-header -->
 
-			<div class="hero" data-bg-image="images/banner.png">
+			<div class="hero" data-bg-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-eenUxTfbS1RDfEe_JyX81O9AEMghcQ1t3w&usqp=CAU">
 				<div class="container">
 					<form action="index.php" method="post" class="find-location">
 						<input type="text" name="city" placeholder="Find your location...">
