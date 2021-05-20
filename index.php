@@ -129,7 +129,10 @@ if($result['cod']!=200)
 					<p class="colophon">Created By Mayank</p>
 						<div class="col-md-3 col-md-offset-1">
 							<div class="social-links">
-								
+								<div><a href="#"><i class="fa fa-facebook"></i></a></div>
+								<div><a href="#"><i class="fa fa-twitter"></i></a></div>
+								<div><a href="#"><i class="fa fa-google-plus"></i></a></div>
+								<div><a href="#"><i class="fa fa-pinterest"></i></a></div>
 							</div>
 						</div>
 					</div>
