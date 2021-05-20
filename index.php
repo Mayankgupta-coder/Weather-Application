@@ -40,19 +40,10 @@ if($result['cod']!=200)
 			.forecast-container .forecast.today .forecast-content {
         text-align: center;
         padding-top: 30px;
-        padding-bottom: 30px; 
-		
-		}
-
+        padding-bottom: 30px; }
 		.colophon
 		{
-				text-align:center;
-		}
-		.social-links
-		{
-			display:flex;
-			justify-content: center;
-			float:right;
+			text-align:center;
 		}
 		</style>
 	</head>
@@ -126,18 +117,23 @@ if($result['cod']!=200)
 			<footer class="site-footer">
 				<div class="container">
 					<div class="row">
-					<p class="colophon">Created By Mayank</p>
+						<div class="col-md-8">
+							<form action="#" class="subscribe-form">
+								<input type="text" placeholder="Enter your email to subscribe...">
+								<input type="submit" value="Subscribe">
+							</form>
+						</div>
 						<div class="col-md-3 col-md-offset-1">
 							<div class="social-links">
-								<div><a href="#"><i class="fa fa-facebook"></i></a></div>
-								<div><a href="#"><i class="fa fa-twitter"></i></a></div>
-								<div><a href="#"><i class="fa fa-google-plus"></i></a></div>
-								<div><a href="#"><i class="fa fa-pinterest"></i></a></div>
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
 							</div>
 						</div>
 					</div>
 
-					
+					<p class="colophon">Created By Mayank Gupta</p>
 				</div>
 			</footer> <!-- .site-footer -->
 		</div>
