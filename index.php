@@ -20,12 +20,11 @@ else if(isset($_GET['lat']))
 	$lat=$_GET['lat'];
 	$long=$_GET['long'];
 	$content=file_get_contents("https://us1.locationiq.com/v1/reverse.php?key=pk.73de96a25a2ffb7359ccc5eeaf0dd575&lat=" .
-    $lat."&lon=".$long."&format=json",true);
+    $lat."&lon=".$long."&format=json");
 	
-	$file = str_replace('"', '', $content);
-	$arr = explode(',',$file);
+	$arr=json_decode($content,true);
 	
-	$city=$arr[11];
+	$city= $arr['address']['city'];
 	$url="http://api.openweathermap.org/data/2.5/weather?q=$city&appid=d402a2b7d7c46eb3c3d5805e6be7aa91";
 	$ch=curl_init();
 	curl_setopt($ch,CURLOPT_URL,$url);
