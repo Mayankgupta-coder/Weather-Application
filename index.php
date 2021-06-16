@@ -1,18 +1,55 @@
 <?php
 $city="";
+if(isset($_POST['location']))
+{
+	?>
+	<script>
+	navigator.geolocation.getCurrentPosition((position) => {
+  console.log(position);
+  console.log(position.coords.longitude);
+  window.location.href='index.php?lat='+position.coords.latitude+'&long='+position.coords.longitude;
+		});
+		
+  
+	</script>
+	<?php
+	
+}
+else if(isset($_GET['lat']))
+{
+	$lat=$_GET['lat'];
+	$long=$_GET['long'];
+	$content=file_get_contents("https://us1.locationiq.com/v1/reverse.php?key=pk.73de96a25a2ffb7359ccc5eeaf0dd575&lat=" .
+    $lat."&lon=".$long."&format=json",true);
+	
+	$file = str_replace('"', '', $content);
+	$arr = explode(',',$file);
+	
+	$city=$arr[11];
+	$url="http://api.openweathermap.org/data/2.5/weather?q=$city&appid=d402a2b7d7c46eb3c3d5805e6be7aa91";
+	$ch=curl_init();
+	curl_setopt($ch,CURLOPT_URL,$url);
+	curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	$result=curl_exec($ch);
+	$result=json_decode($result,true);
+	if($result['cod']!=200)
+	{
+		$city='';
+	}
+}
 if(isset($_POST['submit']))
 {
 	$city=$_POST['city'];
 	$url="http://api.openweathermap.org/data/2.5/weather?q=$city&appid=d402a2b7d7c46eb3c3d5805e6be7aa91";
-$ch=curl_init();
-curl_setopt($ch,CURLOPT_URL,$url);
-curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-$result=curl_exec($ch);
-$result=json_decode($result,true);
-if($result['cod']!=200)
-{
-	$city='';
-}
+	$ch=curl_init();
+	curl_setopt($ch,CURLOPT_URL,$url);
+	curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	$result=curl_exec($ch);
+	$result=json_decode($result,true);
+	if($result['cod']!=200)
+	{
+		$city='';
+	}
 }
 
 ?>
@@ -22,7 +59,7 @@ if($result['cod']!=200)
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-		
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
 		<title>Weather Application</title>
 
 		<!-- Loading third party fonts -->
@@ -44,6 +81,18 @@ if($result['cod']!=200)
 		.colophon
 		{
 			text-align:center;
+		}
+		#location
+		{
+			display:flex;
+			justify-content:center;
+		}
+		#loc_div
+		{
+			
+			margin-bottom:70%;
+			flex-wrap:wrap;
+			
 		}
 		</style>
 	</head>
@@ -85,7 +134,7 @@ if($result['cod']!=200)
 						<input type="text" name="city" placeholder="Find your location...">
 						<input type="submit" name='submit'>
 					</form>
-
+					<div id="location"><form action="index.php" method="post"><input type="submit" name='location' value="Use your location" id="loc_div"></form></div>
 				</div>
 			</div>
 			<?php if($city!=''){?>
