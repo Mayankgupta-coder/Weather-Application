@@ -34,6 +34,11 @@ else if(isset($_GET['lat']))
 	if($result['cod']!=200)
 	{
 		$city='';
+		?>
+		<script>
+		alert("City Not Found");
+		</script>
+		<?php
 	}
 }
 if(isset($_POST['submit']))
@@ -48,6 +53,11 @@ if(isset($_POST['submit']))
 	if($result['cod']!=200)
 	{
 		$city='';
+		?>
+		<script>
+		alert("City Not Found");
+		</script>
+		<?php
 	}
 }
 
@@ -93,6 +103,12 @@ if(isset($_POST['submit']))
 			flex-wrap:wrap;
 			
 		}
+		.row{
+				width:100%;
+				display:flex;
+				justify-content:center;
+				text-align:center;
+		}
 		</style>
 	</head>
 
@@ -130,7 +146,7 @@ if(isset($_POST['submit']))
 			<div class="hero" data-bg-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-eenUxTfbS1RDfEe_JyX81O9AEMghcQ1t3w&usqp=CAU">
 				<div class="container">
 					<form action="index.php" method="post" class="find-location">
-						<input type="text" name="city" placeholder="Find your location...">
+						<input type="text" name="city" placeholder="Enter Location...">
 						<input type="submit" name='submit'>
 					</form>
 					<div id="location"><form action="index.php" method="post"><input type="submit" name='location' value="Use your location" id="loc_div"></form></div>
@@ -163,26 +179,19 @@ if(isset($_POST['submit']))
 			</div>
 			<?php } ?>
 			<footer class="site-footer">
-				<div class="container">
+				
 					<div class="row">
-						<div class="col-md-8">
-							<form action="#" class="subscribe-form">
-								<input type="text" placeholder="Enter your email to subscribe...">
-								<input type="submit" value="Subscribe">
-							</form>
-						</div>
+						
 						<div class="col-md-3 col-md-offset-1">
 							<div class="social-links">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-pinterest"></i></a>
+								<a href="https://github.com/Mayankgupta-coder" target='_blank'><i class="fa fa-github"></i></a>
+								<a href="https://www.linkedin.com/in/mayank-gupta-b8996716b/" target='_blank'><i class="fa fa-linkedin"></i></a>
 							</div>
+							<br/>
+							<p class="colophon">Created By Mayank Gupta</p>
 						</div>
 					</div>
 
-					<p class="colophon">Created By Mayank Gupta</p>
-				</div>
 			</footer> <!-- .site-footer -->
 		</div>
 		
