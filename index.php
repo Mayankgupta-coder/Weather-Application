@@ -105,9 +105,22 @@ if(isset($_POST['submit']))
 		}
 		.row{
 				width:100%;
+				margin-left:-5%;
 				display:flex;
 				justify-content:center;
 				text-align:center;
+		}
+		.fa
+		{
+			line-height:2.5;
+		}
+		.social-links a{
+			margin:2%;
+		}
+		.site-footer .social-links a
+		{
+			width:50px;
+			height:50px;
 		}
 		</style>
 	</head>
@@ -118,32 +131,17 @@ if(isset($_POST['submit']))
 		<div class="site-content">
 			<div class="site-header">
 				<div class="container">
-					<a href="index.html" class="branding">
+					<a href="index.php" class="branding">
 						<img src="images/logo.png" alt="" class="logo">
 						<div class="logo-type">
 							<h1 class="site-title">Mayank</h1>
-							<small class="site-description">Accurate Weather</small>
+							<h1 class="site-description">Accurate Weather</h1>
 						</div>
 					</a>
-
-					<!-- Default snippet for navigation -->
-					<div class="main-navigation">
-						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<!-- <li class="menu-item current-menu-item"><a href="index.php">Home</a></li>
-							<li class="menu-item"><a href="news.html">News</a></li>
-							<li class="menu-item"><a href="live-cameras.html">Live cameras</a></li>
-							<li class="menu-item"><a href="photos.html">Photos</a></li>
-							<li class="menu-item"><a href="contact.html">Contact</a></li> -->
-						</ul> <!-- .menu -->
-					</div> <!-- .main-navigation -->
-
-					<div class="mobile-navigation"></div>
-
 				</div>
 			</div> <!-- .site-header -->
 
-			<div class="hero" data-bg-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-eenUxTfbS1RDfEe_JyX81O9AEMghcQ1t3w&usqp=CAU">
+			<div class="hero" data-bg-image="https://images.unsplash.com/photo-1592210454359-9043f067919b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2VhdGhlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80">
 				<div class="container">
 					<form action="index.php" method="post" class="find-location">
 						<input type="text" name="city" placeholder="Enter Location...">
