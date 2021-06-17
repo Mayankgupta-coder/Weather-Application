@@ -112,15 +112,15 @@ if(isset($_POST['submit']))
 		}
 		.fa
 		{
-			line-height:2.5;
+			line-height:1.5;
 		}
 		.social-links a{
 			margin:2%;
 		}
 		.site-footer .social-links a
 		{
-			width:50px;
-			height:50px;
+			width:60px;
+			height:60px;
 		}
 		</style>
 	</head>
@@ -182,8 +182,8 @@ if(isset($_POST['submit']))
 						
 						<div class="col-md-3 col-md-offset-1">
 							<div class="social-links">
-								<a href="https://github.com/Mayankgupta-coder" target='_blank'><i class="fa fa-github"></i></a>
-								<a href="https://www.linkedin.com/in/mayank-gupta-b8996716b/" target='_blank'><i class="fa fa-linkedin"></i></a>
+								<a href="https://github.com/Mayankgupta-coder" target='_blank'><i class="fa fa-github fa-2x"></i></a>
+								<a href="https://www.linkedin.com/in/mayank-gupta-b8996716b/" target='_blank'><i class="fa fa-linkedin fa-2x"></i></a>
 							</div>
 							<br/>
 							<p class="colophon">Created By Mayank Gupta</p>
