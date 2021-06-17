@@ -149,7 +149,7 @@ if(isset($_POST['submit']))
 						<input type="text" name="city" placeholder="Enter Location...">
 						<input type="submit" name='submit'>
 					</form>
-					<div id="location"><form action="index.php" method="post"><input type="submit" name='location' value="Use your location" id="loc_div"></form></div>
+					<div id="location"><form action="index.php" method="post"><input type="submit" name='location' value="Use your current location" id="loc_div"></form></div>
 				</div>
 			</div>
 			<?php if($city!=''){?>
