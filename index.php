@@ -145,7 +145,7 @@ if(isset($_POST['submit']))
 				<div class="container">
 					<form action="index.php" method="post" class="find-location">
 						<input type="text" name="city" placeholder="Enter Location...">
-						<input type="submit" name='submit'>
+						<input type="submit" name='submit' value="Search">
 					</form>
 					<div id="location"><form action="index.php" method="post"><input type="submit" name='location' value="Use your current location" id="loc_div"></form></div>
 				</div>
